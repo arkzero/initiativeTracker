@@ -10,7 +10,7 @@
     $routeProvider.otherwise({redirectTo: '/'});
 
     $routeProvider.when('/', {
-      templateUrl: 'tracker.html',
+      templateUrl: 'app/tracker.html',
       controller: 'TrackerCtrl'
     });
   }]);
