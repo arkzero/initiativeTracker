@@ -1,20 +1,83 @@
+/*
+ === Color Pallete ===
+ - #6BB6FF
+ - #57B3DE
+ - #78ECFF
+ - #61E8E3
+ - #6BFFDD
+
+ === Grey Scale ===
+ - #F5F7FB
+ - #BFBFBF
+ - #333333
+*/
+
+/* =====      Basic Styles     ===== */
+html, body {
+  background-color: #F5F7FB;
+  color: #333333;
+}
+.container {
+  background-color: #FFFFFF;
+  padding: 20px 32px;
+  border: 1px solid #BFBFBF;
+  margin-top: 12px;
+}
+
+/* =====     Group Containers Styling      =====*/
 .group-container {
   display: inline-block;
-  border: 1px solid black;
-  background-color: #bfbfbf;
+  border: 1px solid #BFBFBF;
   padding: 15px;
 }
-
-.player-list .player {
-  border: 1px solid black;
-  padding: 12px;
+.group-container .add-player {
+  margin: 10px 0;
+}
+.group-container .add-player input {
+  width: calc(100% - 60px);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #BFBFBF;
 }
 
+.group-container .add-player button {
+  position: relative;
+  bottom: 2px;
+}
+
+.group-container .tool-buttons {
+  border-bottom: 1px solid #BFBFBF;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+/* =====      Player List Styles    ======*/
+.player-list .player {
+  border: 1px solid #BFBFBF;
+  padding: 12px;
+}
 .player-list .player input {
   width: 50px;
   display: inline-block;
+  margin-right: 10px;
 }
-
 .player-list .player .player-name {
   display: inline-block;
+  font-weight: 700;
+}
+
+.player-list .player .btn {
+  position: relative;
+  bottom: 4px;
+}
+
+/* =====      Turn Order Styles     ===== */
+.initiaitve-list-container {
+  border: 1px solid #BFBFBF;
+  margin-top: 15px;
+  padding: 12px;
+}
+
+.initiaitve-list-container .initiative-list li {
+  font-size: 16px;
 }

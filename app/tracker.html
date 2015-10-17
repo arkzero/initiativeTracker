@@ -1,39 +1,46 @@
 <div class="row">
   <div class="col-sm-6 player-container group-container">
-    <div class="tool-buttons">
-      <button ng-click="resetGroup(true, false)">Reset Initiative</button>
-      <button ng-click="resetGroup(true, true)">Reset Everything</button>
-    </div>
+
+    <h3 class="text-center">Players</h3>
 
     <div class="add-player">
       <input type="text" ng-model="playerName">
-      <button ng-click="addPlayer(playerName)">Add</button>
+      <button ng-click="addPlayer(playerName)" class="btn btn-primary">Add</button>
+    </div>
+
+    <div class="tool-buttons text-center">
+      <button ng-click="resetGroup(true, false)" class="btn btn-warning">Reset Initiative</button>
+      <button ng-click="resetGroup(true, true)" class="btn btn-danger">Reset Everything</button>
     </div>
 
     <div class="player-list">
       <div class="player" ng-repeat="player in players">
         <input type="number" ng-model="player.initiative">
-        <div class="player-name">{{ player.name }}</div>
+        <div class="player-name bold">{{ player.name }}</div>
+        <button class="pull-right btn btn-danger" ng-click="deletePlayer()">Delete</button>
       </div>
     </div>
   </div>
 
   <div class="col-sm-6 monster-container group-container">
-    <div class="tool-buttons">
-      <button ng-click="resetGroup(false, false)">Reset Initiative</button>
-      <button ng-click="resetGroup(false, true)">Reset Everything</button>
-    </div>
+
+    <h3 class="text-center">Enemies</h3>
 
     <div class="add-player">
       <input type="text" ng-model="enemyName">
-      <button ng-click="addEnemy(enemyName)">Add</button>
+      <button ng-click="addEnemy(enemyName)" class="btn btn-primary">Add</button>
+    </div>
+
+    <div class="tool-buttons text-center">
+      <button ng-click="resetGroup(false, false)" class="btn btn-warning">Reset Initiative</button>
+      <button ng-click="resetGroup(false, true)" class="btn btn-danger">Reset Everything</button>
     </div>
 
     <div class="player-list">
       <div class="player" ng-repeat="enemy in enemies">
         <input type="number" ng-model="enemy.initiative">
-        <div class="player-name">{{ enemy.name }}</div>
-        <div class="pull-right" ng-click="deletePlayer()">X</div>
+        <div class="player-name bold">{{ enemy.name }}</div>
+        <button class="pull-right btn btn-danger" ng-click="deletePlayer()">Delete</button>
       </div>
     </div>
   </div>
@@ -41,10 +48,17 @@
 
 <div class="row">
   <div class="col-sm-12 initiaitve-list-container">
+
+    <h3>Turn Order</h3>
+
     <ol class="initiative-list">
       <li ng-repeat="player in allCombatents | orderBy: 'initiative' : true" ng-show="player.initiative">
         <span class="initiative">{{ player.initiative }}</span> - {{ player.name }}
       </li>
     </ol>
+
+    <div ng-hide="allCombatents.length">
+      Add Player or Enemies up top
+    </div>
   </div>
 </div>
