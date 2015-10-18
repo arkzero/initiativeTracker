@@ -19,10 +19,18 @@
     </div>
 
     <div class="player-list">
-      <div class="player" ng-repeat="player in players">
-        <input type="number" ng-model="player.initiative">
-        <div class="player-name bold">{{ player.name }}</div>
-        <button class="pull-right btn btn-danger" ng-click="deletePlayer(player)">Delete</button>
+      <div class="player row" ng-repeat="player in players">
+        <div class="col-sm-6">
+          <input type="number" ng-model="player.initiative">
+          <div class="player-name bold">{{ player.name }}</div>
+        </div>
+        <div class="col-sm-6">
+
+          <span class="bold">Health:</span>
+          <input type="number" ng-model="player.health">
+
+          <button class="pull-right btn btn-danger" ng-click="deletePlayer(player)">Delete</button>
+        </div>
       </div>
     </div>
   </div>
@@ -42,10 +50,20 @@
     </div>
 
     <div class="player-list">
-      <div class="player" ng-repeat="enemy in enemies">
-        <input type="number" ng-model="enemy.initiative">
-        <div class="player-name bold">{{ enemy.name }}</div>
-        <button class="pull-right btn btn-danger" ng-click="deletePlayer()">Delete</button>
+      <div class="player row" ng-repeat="enemy in enemies">
+
+        <div class="col-sm-6">
+          <input type="number" ng-model="enemy.initiative">
+          <div class="player-name bold">{{ enemy.name }}</div>
+        </div>
+
+        <div class="col-sm-6">
+
+          <span class="bold">Health:</span>
+          <input type="number" ng-model="player.health">
+
+          <button class="pull-right btn btn-danger" ng-click="deleteEnemy(enemy)">Delete</button>
+        </div>
       </div>
     </div>
   </div>

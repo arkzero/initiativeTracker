@@ -34,20 +34,29 @@
     };
 
     $scope.deletePlayer = function (player) {
-      var index = $scope.players.indexOf(player);
-
-      if (index > -1) {
-        $scope.players.splice(index, 1);
-      }
+      deleteObject(player, $scope.players);
     };
 
+    $scope.deleteEnemy = function (enemy) {
+      deleteObject(enemy, $scope.enemies);
+    };
+
+    function deleteObject (object, array) {
+      var index = array.indexOf(object);
+
+      if (index > -1) {
+        array.splice(index, 1);
+      }
+    }
+
     $scope.resetGroup = function (players, allClear) {
-      var group = (players) ? $scope.players : $scope.enemies;
+      var group;
 
       if (allClear) {
-        $scope.players = [];
+        (players) ? $scope.players = [] : $scope.enemies = [];
       } else {
-        for (var i = 0; i < $scope.players.length; i++) {
+        group = (players) ? $scope.players : $scope.enemies
+        for (var i = 0; i < group.length; i++) {
           group[i].initiative = null;
         }
       }
