@@ -17,6 +17,11 @@ html, body {
   background-color: #F5F7FB;
   color: #333333;
 }
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #BFBFBF;
+}
 .container {
   background-color: #FFFFFF;
   padding: 20px 32px;
@@ -35,9 +40,6 @@ html, body {
 }
 .group-container .add-player input {
   width: calc(100% - 60px);
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #BFBFBF;
 }
 
 .group-container .add-player button {
@@ -80,4 +82,16 @@ html, body {
 
 .initiaitve-list-container .initiative-list li {
   font-size: 16px;
+}
+
+/*=====     Dice Roller     ===== */
+.dice-set {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #bfbfbf;
+  padding: 12px;
+}
+
+.dice-settings {
+  margin-bottom: 15px;
 }

@@ -1,0 +1,38 @@
+<div class="row">
+
+  <div class="col-sm-12">
+    <h3 class="text-center">Settings</h3>
+  </div>
+</div>
+<div class="row dice-settings">
+
+  <div class="col-sm-4 dice-setting">
+    <div class="setting-label">Number of Dice</div>
+    <input type="number" ng-model="numDice">
+  </div>
+
+  <div class="col-sm-4 dice-setting">
+    <div class="setting-label">Number of Sides</div>
+    <input type="number" ng-model="numSides">
+  </div>
+
+  <div class="col-sm-4 dice-setting">
+    <div class="setting-label">Number of sets</div>
+    <input type="number" ng-model="numDiceSets">
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="col-sm-12 text-center">
+    <button class="btn btn-success" ng-click="rollDice()">Roll Dice</button>
+  </div>
+
+</div>
+
+<div class="roll-output-contianer">
+  <h3 class="text-center">Dice Output</h3>
+  <div class="dice-set" ng-repeat="result in diceSets track by $index">
+    {{ result }}
+  </div>
+</div>

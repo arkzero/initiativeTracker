@@ -10,9 +10,14 @@
     $routeProvider.otherwise({redirectTo: '/'});
 
     $routeProvider.when('/', {
-      templateUrl: 'app/tracker.html',
+      templateUrl: 'app/views/page-templates/tracker.html',
       controller: 'TrackerCtrl'
     });
+
+    $routeProvider.when('/dice-roller', {
+      templateUrl: 'app/views/page-templates/dice.html',
+      controller: 'DiceCtrl'
+    })
   }]);
 
   module.controller('TrackerCtrl', ['$scope', function ($scope) {
@@ -56,4 +61,31 @@
     })
 
   }]);
+
+  module.controller('DiceCtrl', [
+    '$scope',
+    function ($scope) {
+      $scope.numDice = 0;
+      $scope.numDiceSets = 0;
+      $scope.numSides = 0;
+
+      $scope.rollDice = function () {
+        var setIndex, resultIndex;
+
+        $scope.diceSets = [];
+
+        for (setIndex = 0; setIndex < $scope.numDiceSets; setIndex += 1) {
+          $scope.diceSets[setIndex] = 0;
+          for (resultIndex = 0; resultIndex < $scope.numDice; resultIndex += 1) {
+            $scope.diceSets[setIndex] += getRandomInt(1, $scope.numSides);
+          }
+        }
+      };
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    }
+  ]);
+
 })();
