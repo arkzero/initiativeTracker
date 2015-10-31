@@ -20,7 +20,9 @@
     $scope.addPlayer = function (playerName) {
       $scope.players.push({
         name: playerName,
-        initiative: null
+        initiative: null,
+        maxHalth: null,
+        currentHealth: null
       });
       $scope.playerName = null;
     };
@@ -28,7 +30,9 @@
     $scope.addEnemy = function (enemyName) {
       $scope.enemies.push({
         name: enemyName,
-        initiative: null
+        initiative: null,
+        maxHalth: null,
+        currentHealth: null
       });
       $scope.enemyName = null;
     };

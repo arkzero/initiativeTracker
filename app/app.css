@@ -79,6 +79,10 @@ input {
   bottom: 4px;
 }
 
+.player-list .indented-col {
+  margin-top: 12px;
+}
+
 /* =====      Turn Order Styles     ===== */
 .initiaitve-list-container {
   border: 1px solid #BFBFBF;
